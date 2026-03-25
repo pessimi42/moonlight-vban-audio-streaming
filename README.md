@@ -50,7 +50,32 @@ Now click on the **VBAN-button** at the top left corner right next to **Menu**.
 
 <img width="1846" height="847" alt="image" src="https://github.com/user-attachments/assets/e751111d-47dd-442c-8ebb-1672ffde7934" />
 
-As you can see in the **Outgoing Streams** -section I have the gaming PC ip added, **VBAN** is toggled **ON** and also the outgoing stream is **On**. The green marker after the ip means that it is connected to the remote VBAN. Net quality is set to Medium because audio is routed to the Internet and it has limited bandwidth. Source is **BUS B2**, which I've have routed the Microphone to.
+As you can see in the **Outgoing Streams** -section I have the gaming PC ip added, **VBAN** is toggled **ON** and also the outgoing stream is **On**. The green marker after the ip means that it is connected to the remote VBAN. Net quality is set to Medium because audio is routed to the Internet and it has limited bandwidth. Source is **BUS B2**, which I've have routed the Microphone to. The stream name **must be the same on both sides**. I've named mine to be **Mic**
 
 ## Voicemeeter gaming rig -side
+
+For starters you can configure the autostart and system tray -settings as on the client side.
+
+To keep the setup as simple as possible add **A1** to the **Speakers (Steam Streaming Microphone)** from the **MME-category**.
+
+<img width="1462" height="763" alt="image" src="https://github.com/user-attachments/assets/95a5babb-72d0-4848-9296-5cbadd176027" />
+
+And for the **Stereo Input 1** select **Steam Streaming Microphone** from thd **WDM-category**
+
+<img width="1027" height="745" alt="image" src="https://github.com/user-attachments/assets/d4a587d3-51a9-430f-8048-286ec55a1a88" />
+
+Now open the **VBAN-window** again.
+
+<img width="1813" height="828" alt="image" src="https://github.com/user-attachments/assets/c65b39d3-b0af-4731-a9ca-9c999f54102d" />
+
+When you switch the VBAN ON, it should sau that there is one **Incoming Stream** detected. You still need to add your clients Tailscale IP and Stream Name manually and toggle the incoming stream on. Add destination to Virtual in #2.
+
+The VoiceMeeter app window should look like this (toggles and soundbar on the far right witnessing that the stream is coming from your client).
+
+<img width="1020" height="619" alt="image" src="https://github.com/user-attachments/assets/c771862e-f994-472b-918b-03f19d9c7f3a" />
+
+## Conclusion
+
+If the VBAN doesn't show green markers behind the ip addresses you should try to toggle the VBAN OFF and back ON at the gaming rig side and make sure that **UDP port 6980** is open in the firewall.
+
 
