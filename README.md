@@ -1,7 +1,7 @@
 # moonlight-vban-audio-streaming
 This repo documents how to succesfully enable microphone thru IP networking
 
-As [Moonlight](https://github.com/moonlight-stream/moonlight-qt/releases/) or [Artemis](https://github.com/wjbeckett/artemis/releases) does not natively support microphone passthru yet and some popular games need co-operation with internal voice chat, we need to make some audio routing to have this happen.
+As [Moonlight](https://github.com/moonlight-stream/moonlight-qt/releases/) or [Artemis](https://github.com/wjbeckett/artemis/releases) does not natively support microphone passthru yet and some popular games need co-operation with internal voice chat, we need to make some audio routing to make this happen.
 
 Moonlight has a [fork](https://github.com/logabell/moonlight-qt-mic/releases) that enables microphone passthrough, but the audio quality is poor if it is used over the Internet, might be good enough if gaming pc and Moonlight client are on a same LAN.
 
@@ -9,11 +9,11 @@ This document describes **my solution** to the need to have a clear audio from m
 
 ## Tools needed
 
-[Voicemeeter (Banana)](https://vb-audio.com/Voicemeeter/banana.htm) is a powerful audio mixer that enables a lot of potential for audio-enthusiastics to power up usual PC audio capabilities. Not available for Mac, but quite similar to [Loopback](https://www.rogueamoeba.com/loopback/)
+[VoiceMeeter (Banana)](https://vb-audio.com/Voicemeeter/banana.htm) is a powerful audio mixer that enables a lot of potential for audio-enthusiastics to power up usual PC audio capabilities. Not available for Mac, but quite similar to [Loopback](https://www.rogueamoeba.com/loopback/)
 
 [Tailscale](https://tailscale.com/download), Tailscale is a Zero Trust identity-based connectivity platform that replaces your legacy VPN, SASE, and PAM and connects remote teams, multi-cloud environments, CI/CD pipelines, Edge & IoT devices, and AI workloads. **For this purpose I found that the Tailscale works more flawlessly than traditional VPN solutions**. It is based on the [WireGuard](https://www.wireguard.com/) protocol, but I couldn't get this to work with pure WireGuard peering yet.
 
-## Installing Voicemeeter
+## Installing VoiceMeeter
 
 First install [Voicemeeter (Banana)](https://vb-audio.com/Voicemeeter/banana.htm) **to both nodes**. Remember to follow the steps, especially the **REBOOTS** before preoceeding.
 
@@ -27,7 +27,7 @@ Next install [Tailscale](https://tailscale.com/download) to both nodes. Write up
 
 # Configuring VoiceMeeter
 
-This configuration guide is **only** aiming to make a stable microphone connection from client to the gaming rig. As stated before, you can do lots of other stuff with this too. Configuration guide is divided to **client pc** and **gaming rig** sections. Network connectivity will be described after this at its own chapter.
+This configuration guide is **only** aiming to make a stable microphone connection from client to the gaming rig. As stated before, you can do lots of other stuff with this too. Configuration guide is divided to **client pc** and **gaming rig** sections.
 
 ## VoiceMeeter client-side
 
@@ -44,7 +44,7 @@ Click on **Stereo Input 1** and choose your desired microphone from the list. Fo
 
 For this purpose I've made it as simple as possible. Your dashboard should look like this:
 <img width="1024" height="630" alt="image" src="https://github.com/user-attachments/assets/88257b29-2d3e-4ccf-bbd6-93abee95a92b" />
-For microphone only the Output B2 is enabled and you can see it at the far right in the **Master section** being **virtual input B1**
+For microphone only the Output B2 is enabled and you can see it at the far right in the **Master section** being **virtual input B2**
 
 Now click on the **VBAN-button** at the top left corner right next to **Menu**.
 
@@ -56,11 +56,11 @@ As you can see in the **Outgoing Streams** -section I have the gaming PC ip adde
 
 For starters you can configure the autostart and system tray -settings as on the client side.
 
-To keep the setup as simple as possible add **A1** to the **Speakers (Steam Streaming Microphone)** from the **MME-category**.
+To keep the setup as simple as possible add **A1** to the **Speakers (Steam Streaming Speakers)** from the **MME-category**.
 
 <img width="1462" height="763" alt="image" src="https://github.com/user-attachments/assets/95a5babb-72d0-4848-9296-5cbadd176027" />
 
-And for the **Stereo Input 1** select **Steam Streaming Microphone** from thd **WDM-category**
+And for the **Stereo Input 1** select **Steam Streaming Microphone** from the **WDM-category**
 
 <img width="1027" height="745" alt="image" src="https://github.com/user-attachments/assets/d4a587d3-51a9-430f-8048-286ec55a1a88" />
 
@@ -68,7 +68,7 @@ Now open the **VBAN-window** again.
 
 <img width="1813" height="828" alt="image" src="https://github.com/user-attachments/assets/c65b39d3-b0af-4731-a9ca-9c999f54102d" />
 
-When you switch the VBAN ON, it should sau that there is one **Incoming Stream** detected. You still need to add your clients Tailscale IP and Stream Name manually and toggle the incoming stream on. Add destination to Virtual in #2.
+When you switch the VBAN ON, it should say that there is one **Incoming Stream** detected. You still need to add your clients Tailscale IP and Stream Name manually and toggle the incoming stream on. Add destination to Virtual in #2.
 
 The VoiceMeeter app window should look like this (toggles and soundbar on the far right witnessing that the stream is coming from your client).
 
