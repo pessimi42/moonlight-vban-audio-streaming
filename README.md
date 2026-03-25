@@ -78,4 +78,6 @@ The VoiceMeeter app window should look like this (toggles and soundbar on the fa
 
 If the VBAN doesn't show green markers behind the ip addresses you should try to toggle the VBAN OFF and back ON at the gaming rig side and make sure that **UDP port 6980** is open in the firewall.
 
+## In-game
 
+Be sure to set the microphone to be **VoiceMeeter B2 Input**
