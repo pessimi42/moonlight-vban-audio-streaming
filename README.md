@@ -13,8 +13,25 @@ This document describes **my solution** to the need to have a clear audio from m
 
 [Tailscale](https://tailscale.com/download), Tailscale is a Zero Trust identity-based connectivity platform that replaces your legacy VPN, SASE, and PAM and connects remote teams, multi-cloud environments, CI/CD pipelines, Edge & IoT devices, and AI workloads. **For this purpose I found that the Tailscale works more flawlessly than traditional VPN solutions**. It is based on the [WireGuard](https://www.wireguard.com/) protocol, but I couldn't get this to work with pure WireGuard peering yet.
 
-# Installing Voicemeeter
+## Installing Voicemeeter
 
 First install [Voicemeeter (Banana)](https://vb-audio.com/Voicemeeter/banana.htm) **to both nodes**. Remember to follow the steps, especially the **REBOOTS** before preoceeding.
 
 There are several configuration guides available in YouTube, but I'll explain my way of achieving my goal which may differ from those tutorials.
+
+We'll get back to the configurAtion later on.
+
+## Installing Tailscale
+
+Next install [Tailscale](https://tailscale.com/download) to both nodes. Write up the both IPs you get as those are needed later on.
+
+# Configuring VoiceMeeter
+
+This configuration guide is **only** aiming to make a stable microphone connection from client to the gaming rig. As stated before, you can do lots of other stuff with this too. Configuration guide is divided to **client pc** and **gaming rig** sections. Network connectivity will be described after this at its own chapter.
+
+## VoiceMeeter client-side
+
+First start VoiceMeeter. From menu you can configure it to start automatically at Windows boot and go minimized to the system tray. Menu is located at the top right corner of the app. **Red highlight**.
+
+<img width="512" height="310" alt="mic0001" src="https://github.com/user-attachments/assets/5d36a5fd-9cdb-497c-8689-84671f289462" />
+
